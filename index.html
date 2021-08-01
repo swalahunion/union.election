@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align:center">
+          <h1>VOTE</h1>
+          <p style="color:#1992fc">SWALAH UNION ELECTION 2021-22</p>
+        </div>
+        <div class="row">
+          
+          <div class="column">
+            <form id="submit-form" action="">
+              <label for="fname">Name</label>
+              <input type="text" id="fname" value="" required name="name" placeholder="Your name..">
+              <label for="lname">Ad:no</label>
+              <input type="text" id="lname" value="" required name="ad:no" placeholder="admission no...">
+              <label for="class">Class</label>
+              <select id="class" name="class" required="">
+            	<option value="">select you're class</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                 <option value="6">6</option>
+                 <option value="7">7</option>
+                 <option value="8">8</option>
+                 <option value="9">9</option>
+                 <option value="10">10</option>                
+               </select>
+              
+                <label for="class">PRESIDENT</label>
+               <select id="President" name="President" required="">
+               	<option value="">select a candidate</option>
+                  <option value="munavvar">MUNAVVAR</option>
+                  <option value="salman p">SALMAN P</option>
+                   <option value="munshi">MUNSHI</option>
+                    <option value="salman kp">SALMAN KP</option>
+                    </select>
+                   
+                <label for="class">SECRETARY</label>
+               <select id="secretary" name="secretary" required="">
+               	<option value="">select a candidate</option>
+                  <option value="jasim p">JASIM P</option>
+                  <option value="murshid">MURSHID</option>
+                   <option value="shammas">SHAMMAS</option>
+                    <option value="fathah">FATHAH</option>
+                    </select>
+                    
+                <label for="class">TREASURER</label>
+               <select id="treasurer" name="treasurer" required="">
+               	<option value="">select a candidate</option>
+                  <option value="favas t">FAVAS T</option>
+                  <option value="shakir ali">SHAKIR ALI</option>
+                   <option value="musharraf">MSHARRAF</option>
+                    <option value="aflah">AFLAH</option>
+                    </select>
+                  
+              <label for="subject">Comments</label>
+              <textarea id="subject" name="message" placeholder="Write you're comments..." style="height:70px"></textarea>
+              <input type="submit" value="Submit">  	
+            </form>
+          </div>
+        </div>
+      </div>
+      <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbxmfYW5tXrY5XYl11sazZSxGzSttKc9LbZhh8xEVg/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
+</body>
+</html>
